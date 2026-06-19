@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sarkeaao.github.io/cn-i-game-com-cn/sitemap.xml
