@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>6686体育 · 站点介绍</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1f2a38;
+      line-height: 1.6;
+      padding: 1.2rem 1rem 2.5rem;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 8px 28px rgba(0, 40, 50, 0.06);
+      padding: 2rem 1.8rem 2.5rem;
+    }
+
+    /* 简介卡片区 */
+    .hero-card {
+      background: linear-gradient(145deg, #eef7fa 0%, #d9ecef 100%);
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2.2rem;
+      position: relative;
+    }
+
+    .hero-card h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b4551;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-card .sub {
+      color: #1f5a66;
+      font-size: 1rem;
+      font-weight: 400;
+      max-width: 70%;
+      border-left: 4px solid #2e9aab;
+      padding-left: 1rem;
+      margin: 0.6rem 0 1rem;
+    }
+
+    .hero-card p {
+      color: #1f4c56;
+      max-width: 88%;
+      font-size: 0.98rem;
+    }
+
+    /* 目录网格 —— 知识库入口感 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0 1.6rem;
+    }
+
+    .card-item {
+      background: #f7fcff;
+      border-radius: 24px;
+      padding: 1.5rem 1.2rem 1.4rem;
+      border: 1px solid #ddeef3;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+    }
+
+    .card-item:hover {
+      box-shadow: 0 6px 14px rgba(30, 110, 120, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-item .card-icon {
+      display: inline-block;
+      background: #c5e3ea;
+      color: #0b4c58;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #08343e;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-item p {
+      font-size: 0.9rem;
+      color: #2c5761;
+    }
+
+    /* 说明区 —— 可信说明 + 介绍 */
+    .section-block {
+      margin: 2rem 0 1.8rem;
+      border-top: 1px solid #d9e9ee;
+      padding-top: 1.8rem;
+    }
+
+    .section-block h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0c4955;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-block h2::before {
+      content: '';
+      width: 5px;
+      height: 1.2rem;
+      background: #2e9aab;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .section-block p {
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    .highlight-tag {
+      background: #e4f2f5;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #105e6b;
+      margin-right: 0.4rem;
+    }
+
+    .note-box {
+      background: #f2f9fc;
+      border-left: 6px solid #2e9aab;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      margin: 1.5rem 0;
+    }
+
+    .note-box p {
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1.2rem 0 0.8rem;
+    }
+
+    .faq-row {
+      background: #f4fafd;
+      padding: 0.8rem 1.2rem;
+      border-radius: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.4rem 0.6rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #0b4956;
+      min-width: 5.5rem;
+    }
+
+    .faq-a {
+      color: #1e515b;
+    }
+
+    .site-link-wrap {
+      margin: 2rem 0 0.8rem;
+      padding: 0.6rem 0;
+    }
+
+    .site-link-wrap a {
+      color: #0d5b69;
+      background: #e2f1f5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .site-link-wrap a:hover {
+      background: #b7dce5;
+      color: #04333e;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b8b93;
+      border-top: 1px solid #ddecf1;
+      padding-top: 1.2rem;
+    }
+
+    /* 移动端自适应 */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem;
+        border-radius: 28px;
+      }
+
+      .hero-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .hero-card h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero-card .sub {
+        max-width: 100%;
+      }
+
+      .hero-card p {
+        max-width: 100%;
+      }
+
+      .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .card-item {
+        padding: 1.2rem 1rem;
+      }
+
+      .faq-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-block h2 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      body {
+        padding: 0.8rem 0.5rem;
+      }
+      .container {
+        padding: 1rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- hero 区域：站点说明 & 可信切入 -->
+  <div class="hero-card">
+    <h1>6686体育 · 信息库</h1>
+    <div class="sub">站点介绍 · 可信说明 · 内容入口</div>
+    <p>对于希望了解体育资讯与平台背景的用户，这里整理了关于 <strong>6686体育</strong> 的基本介绍、相关说明以及常见问题摘要。页面采用知识库风格，方便快速浏览目录式卡片。</p>
+  </div>
+
+  <!-- 卡片网格：目录感布局（四个入口卡片） -->
+  <div class="grid-cards">
+    <div class="card-item">
+      <span class="card-icon">📋 概览</span>
+      <h3>站点定位</h3>
+      <p>提供体育内容聚合、赛事信息展示以及相关资源指引。内容涵盖多个运动项目及资讯更新。</p>
+    </div>
+    <div class="card-item">
+      <span class="card-icon">🔍 可信说明</span>
+      <h3>信息参考</h3>
+      <p>所有介绍均基于公开资料与站点功能说明整理，不涉及主观承诺。建议以实际页面展示为准。</p>
+    </div>
+    <div class="card-item">
+      <span class="card-icon">🧩 功能摘要</span>
+      <h3>结构简述</h3>
+      <p>页面包含导航分区、赛事列表、分类标签等模块，布局以清晰易读为原则，适配移动设备。</p>
+    </div>
+    <div class="card-item">
+      <span class="card-icon">📎 相关链接</span>
+      <h3>外部资源</h3>
+      <p>站内提供指向主要页面的链接，用户可根据需要探索更多体育相关内容。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 + 可信说明段落 -->
+  <div class="section-block">
+    <h2>站点介绍与可信说明</h2>
+    <p><span class="highlight-tag">6686体育</span> 是一个以体育信息聚合为主的站点，提供赛事资讯、项目分类及内容导航。页面内容围绕体育爱好者的信息需求进行组织，不包含夸张或误导性表述。</p>
+    <p>在可信性方面，本站所有介绍均基于站点公开结构与功能描述，不虚构数据或服务。用户可根据自身判断，通过<a href="https://page-6686.com" style="color:#0d5b69; text-decoration: underline; text-underline-offset: 3px;">6686体育</a>浏览实际内容，以获取第一手信息。建议结合多个信源进行参考。</p>
+    <p>页面布局采用卡片式网格与分区标题，便于在手机和桌面端快速定位感兴趣的部分。整体风格以蓝绿为点缀，降低视觉负担。</p>
+  </div>
+
+  <!-- 提示区 note-box -->
+  <div class="note-box">
+    <p><strong>📌 提示</strong></p>
+    <p style="margin-top:0.3rem;">本页面仅作为介绍与入口参考，不构成任何引导或保证。站点内容可能随时间调整，请以实际页面为准。建议在访问前了解相关服务说明。</p>
+  </div>
+
+  <!-- 相关信息区：FAQ 摘要 + 场景 -->
+  <div class="section-block" style="border-top: none; padding-top: 0.2rem;">
+    <h2>相关信息 · FAQ 摘要</h2>
+    <div class="faq-mini">
+      <div class="faq-row">
+        <span class="faq-q">该站点主要提供什么？</span>
+        <span class="faq-a">体育资讯、赛事分类信息及相关内容索引，页面结构偏向知识库式入口。</span>
+      </div>
+      <div class="faq-row">
+        <span class="faq-q">信息可信度如何？</span>
+        <span class="faq-a">描述基于页面公开信息整理，不包含主观或夸大成分，用户可自行核实。</span>
+      </div>
+      <div class="faq-row">
+        <span class="faq-q">移动端浏览体验？</span>
+        <span class="faq-a">采用响应式网格与自适应间距，在手机和平板上均有较好可读性。</span>
+      </div>
+    </div>
+    <p style="font-size:0.9rem; margin-top:0.8rem; color: #2b626e;">如需直接访问站点，可点击上方的链接或通过浏览器打开 <span style="background:#e0f0f5; padding:0.1rem 0.6rem; border-radius:30px;">page-6686.com</span> 查看完整内容。</p>
+  </div>
+
+  <!-- 明确的 a 标签：自然嵌入句子，符合要求 -->
+  <div class="site-link-wrap">
+    <p>你可以通过 <a href="https://page-6686.com">6686体育</a> 了解更详尽的赛事分类与内容模块。本介绍页面仅为辅助参考，不替代原站信息。</p>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>目录式介绍 · 知识库入口风格 · 蓝绿点缀</span>
+  </div>
+</div>
+</body>
+</html>
